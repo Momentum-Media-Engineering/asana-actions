@@ -1,0 +1,21 @@
+name: 'Add Asana Comment'
+description: 'GitHub Action to add comments to Asana tasks'
+inputs:
+  task_id:
+    description: 'The Asana task ID'
+    required: true
+  comment:
+    description: 'Plain text comment'
+    required: true
+  html_text:
+    description: 'HTML formatted comment'
+    required: false
+  auth_token:
+    description: 'Asana API authentication token'
+    required: true
+outputs:
+  response:
+    description: 'API response from Asana'
+runs:
+  using: 'node20'
+  main: 'index.js'
