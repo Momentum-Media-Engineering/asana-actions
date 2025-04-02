@@ -15,6 +15,7 @@ async function run() {
     const context = github.context;
     const pullRequest = context.payload.pull_request;
     const pullRequestDescription = pullRequest?.body;
+    const pullRequestAuthor = pullRequest?.user?.login;
     const pullRequestId = pullRequest?.number;
     const pullRequestName = pullRequest?.title;
     const pullRequestURL = pullRequest?.html_url;
@@ -27,6 +28,7 @@ async function run() {
       html_text: htmlText,
       dynamic: dynamic,
       pullRequestDescription: pullRequestDescription,
+      pullRequestAuthor: pullRequestAuthor,
       pullRequestId: pullRequestId,
       pullRequestName: pullRequestName,
       pullRequestURL: pullRequestURL,
